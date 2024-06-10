@@ -185,7 +185,7 @@ def test_unsuccessful_add_pet_photo_with_format_file_mp3(pet_photo= "images/deti
 
 def test_unsuccessful_add_pet_photo_with_invalid_auth_key(pet_photo='images/beautiful-white-cat-with-balls-indoors.jpg'):
     """13 test. Проверка того, что можно добавить фото собственному питомцу. Проверяем , что запрос возвращает
-    статус 200 и , что  название фото питомца есть в теле ответа от сервера"""
+    статус 403"""
     _, auth_key = pf.get_api_key(valid_email, valid_password)
     _, my_pets = pf.get_list_of_pets(auth_key, "my_pets")
     pet_id = my_pets["pets"][0]["id"]
